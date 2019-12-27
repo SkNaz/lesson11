@@ -2,8 +2,11 @@ var area = document.querySelector(".txt");
 
 var tpp = document.querySelectorAll(".put");
 
-setInterval(function(){
+setInterval(function(){	
 	for(i = 0; i < tpp.length; i++) {
-		area.textContent = tpp[i].value;
+		if(tpp[i].value) {
+			lal = tpp[i].value.split(",");
+		}
+		area.textContent += lal;
 	}	
-}, 5000)
+}, 10000)
