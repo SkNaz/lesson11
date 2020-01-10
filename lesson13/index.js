@@ -3,7 +3,7 @@ var area = document.querySelector(".txt");
 var tpp = document.querySelectorAll(".put");
 
 setInterval(function(){	
-	for(i = 0, mass = []; i < tpp.length; i++) {
+	for(var i = 0, mass = []; i < tpp.length; i++) {
 		if(tpp[i].value) {
 			mass[i] = tpp[i].value;		
 		}
