@@ -12,8 +12,8 @@ window.onload = function() {
 				} else {
 					counter = 0;
 				}
-					haha[i].id = "";
-					haha[counter].id = "center";
+				haha[i].id = "";
+				haha[counter].id = "center";
 			}
 		})(i);
 	}
