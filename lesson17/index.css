@@ -6,7 +6,7 @@
 }
 
 .lol:nth-child(odd) {
-	left: -100%;
+	left: -210px;
 }
 
 .lol:nth-child(even) {
@@ -14,15 +14,15 @@
 }
 
 .lol {
-	width: 250px;
-	height: 150px;
+	width: 200px;
+	height: 120px;
 	border: 1px solid black;
 	display: flex;
 	background-color: gray;
 	position: fixed;
-	transition: 2s;
-	font-size: 30px;
 	color: red;
+	transition: 2s;
+	font-size: 25px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -37,11 +37,6 @@
 }
 
 .sub {
-	width: 100px;
-	height: 25px;
-}
-
-.fields_one {
-	width: 100px;
+	width: 50px;
 	height: 25px;
 }
