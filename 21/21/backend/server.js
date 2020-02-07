@@ -43,22 +43,32 @@ app.post('/user', function(req, res) {
 
   fs.readFile("users.json", "utf-8", function(err, content) {
 
-  var data = JSON.parse(content);
-  console.log(data);
+    var data = JSON.parse(content);
+    console.log(data);
     
-  for(var i = 0; i < data.length; i++) {
-    if(data[i].login == income.login) {
-      res.send(data[i].id);
-    }
-  }
+    for(var i = 0; i < data.length; i++) {
+      if(data[i].login == income.login) {
+        res.send(data[i].id);
+      }
+    } 
 
-  res.status(401);
-  res.send("NOT FOUND");
+    res.status(401).send("NOT FOUND");
+
+  });
 
 });
 
-})
+app.post('/goods', function(req, res) {
+  const id = req.body;
+  var parse = JSON.parse(id);
 
+  fs.readFile("goods/"+ parse + ".json", "utf-8", function(err, content) {
+      var subject = JSON.parse(content);
+      var aga = JSON.stringify(subject);
+      res.send(aga);
+  });
+
+});
 
 
 app.listen(3000, function () { // говорим на каком порту запускать нашу  NODE_JS  программу.
