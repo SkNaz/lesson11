@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="frame" :style="{'display': 'inline-block'}">
+		<ul>
+			<div v-for="(item, $index) in techlist1" :key="$index">
+				{{item.state}}
+			</div>
+		</ul>
+		<button @click="move()">Transfer</button>
+		<ul>
+			<div v-for="(item, $index) in techlist2" :key="$index">
+				{{item.state}}
+			</div>
+		</ul>
+		<button @click="movereverse()">Transfer</button>
+	</div>
+	<script src="index.js"></script>
+</body>
+</html>
