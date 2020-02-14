@@ -1,0 +1,17 @@
+[
+	{
+		"login": "admin",
+		"password": "12399",
+		"id": "23"
+	},
+	{
+		"login": "narkoman",
+		"password": "zxc",
+		"id": "15"
+	},
+	{
+		"login": "test",
+		"password": "rrr",
+		"id": "7"
+	}
+]
