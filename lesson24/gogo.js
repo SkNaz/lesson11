@@ -38,7 +38,7 @@
 
  	`,
  	created() {
- 		value = localStorage.getItem();
+ 		 this.ribble.value = localStorage.getItem(this.ribble.name);
  	}
  })
 
