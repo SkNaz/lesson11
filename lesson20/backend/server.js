@@ -20,12 +20,9 @@ app.get('/users', function (req, res) { // req - обьект запроса, re
   res.send(users);
 });
 
-
-
-
 app.get('/user', function (req, res) { // req - обьект запроса, res -- обьект ответа
   const users = getDataFromDataBasse();
-
+  
   res.send(users[users.length - 1].name);
 
 });
@@ -33,11 +30,11 @@ app.get('/user', function (req, res) { // req - обьект запроса, res
 
 function getDataFromDataBasse() {
   return users = [
-    {name: 'Valera'},
-    {name: 'Valera'},
-    {name: 'Valera'},
-    {name: 'Valera'},
-    {name: 'Ivan'}
+    {name: 'Sergio'},
+    {name: 'Kolyamba'},
+    {name: 'Alexey Popovich'},
+    {name: 'Kubrat Pulev'},
+    {name: 'Jason Michael Statham'}
   ];
 }
 
