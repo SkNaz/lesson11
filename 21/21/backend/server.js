@@ -16,27 +16,6 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get('/', function (req, res) { // req - обьект запроса, res -- обьект ответа
-    // fs.readFile("a.json", 'utf-8', function(err, content) {
-    //   res.send(content);
-    // });
-
-
-    /*fs.writeFile("a.json", JSON.stringify(['1']), (err) => {
-      if (err) console.log(err);
-
-      console.log("Successfully Written to File.");
-    });*/
-
-});
-
-app.get('/user', function (req, res) { // req - обьект запроса, res -- обьект ответа
-
-  res.send('552');
-
-});
-
-
 app.post('/user', function(req, res) {
 
   const a = req.body;
@@ -47,15 +26,12 @@ app.post('/user', function(req, res) {
 
     var data = JSON.parse(content);
     console.log(data);
-    
-    for(var i = 0; i < data.length; i++) {
-      if(data[i].login == income.login) {
-        res.send(data[i].id);
-      }
-    } 
-
-    res.status(401).send("NOT FOUND");
-
+    let results = data.filter(item => item.login == income.login && item.password == income.password);
+    if(results == null) {
+      res.status(401).send("NOT FOUND");
+    } else {
+      res.send(results[0].id);
+    }
   });
 
 });
@@ -64,10 +40,8 @@ app.post('/goods', function(req, res) {
   const id = req.body;
   var parse = JSON.parse(id);
 
-  fs.readFile("goods/"+ parse + ".json", "utf-8", function(err, content) {
-      var subject = JSON.parse(content);
-      var aga = JSON.stringify(subject);
-      res.send(aga);
+  fs.readFile(`goods/${parse}.json`, "utf-8", function(err, content) {
+      res.send(content);
   });
 
 });
