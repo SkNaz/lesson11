@@ -1,10 +1,10 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{'back': backgr == true }">
     <button @click="use">HIT ME</button>
     <modal :visible="visible" @receive="reuse">
-      <template v-slot:header>BLOOD</template>
-      <template v-slot:content>AIR</template>
-      <template v-slot:footer>GRASS</template>
+      <template>text</template>
+      <template></template>
+      <template></template>
     </modal>
   </div>
 </template>
@@ -16,7 +16,8 @@ export default {
   name: 'App',
   data () {
     return {
-       visible: false
+       visible: false,
+       backgr: false
     }
   },
   components: {
@@ -25,15 +26,22 @@ export default {
   methods: {
     use () {
       this.visible = true;
+      this.backgr = true;
     },
     reuse () {
       this.visible = false;
+      this.backgr = false;
     }
   }
 }
 </script>
 
 <style>
+body {
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -42,7 +50,12 @@ export default {
   color: #2c3e50;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+.back {
+  background-color: #a9a9a9;
 }
 </style>
