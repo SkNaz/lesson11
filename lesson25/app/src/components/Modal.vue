@@ -1,9 +1,7 @@
 <template>
     <div class="test" :class="{'show': visible == true }">
         <span @click="switcher" class="close">X</span>
-        <div><slot name="header"></slot></div>
-        <div><slot name="content"></slot></div>
-        <div><slot name="footer"></slot></div>
+        <div><slot></slot></div>
     </div>
 </template>
 
@@ -26,19 +24,20 @@
     .test {
         width: 400px;
         height: 500px;
+        border-radius: 8px;
         display: flex;
         visibility: hidden;
-        background-color: #a9a9a9;
+        background-color: #ffffff;
     }
     .show {
         visibility: visible;
     }
-
     .close {
         cursor: pointer;
         margin: 5px;
         position: relative;
         top: 10px;
         left: 92%;
+        color: red;
     }
 </style>
